@@ -130,10 +130,10 @@ class ExchangeBase(PrintError):
 
 class CoinMarketCap(ExchangeBase):
 
-    def get_rates(self, ccy):
-        json_usd = self.get_json('api.coinmarketcap.com', '/v1/ticker/fujicoin/')
-        json_eur = self.get_json('api.coinmarketcap.com', '/v1/ticker/fujicoin/?convert=EUR')
-        json_jpy = self.get_json('api.coinmarketcap.com', '/v1/ticker/fujicoin/?convert=JPY')
+    async def get_rates(self, ccy):
+        json_usd = await self.get_json('api.coinmarketcap.com', '/v1/ticker/fujicoin/')
+        json_eur = await self.get_json('api.coinmarketcap.com', '/v1/ticker/fujicoin/?convert=EUR')
+        json_jpy = await self.get_json('api.coinmarketcap.com', '/v1/ticker/fujicoin/?convert=JPY')
         return {'USD': Decimal(json_usd[0]['price_usd']),
                 'EUR': Decimal(json_eur[0]['price_eur']),
                 'JPY': Decimal(json_jpy[0]['price_jpy'])}
