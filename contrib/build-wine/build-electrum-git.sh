@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME_ROOT=electrum
+NAME_ROOT=electrum-FJC
 
 # These settings probably don't need any change
 export WINEPREFIX=/opt/wine64
@@ -24,7 +24,7 @@ pushd $WINEPREFIX/drive_c/electrum
 git submodule init
 git submodule update
 
-VERSION=`git describe --tags --dirty --always`
+VERSION="3.3.4"
 echo "Last commit: $VERSION"
 
 pushd ./contrib/deterministic-build/electrum-locale
@@ -69,9 +69,9 @@ popd
 # $VERSION could be passed to the electrum.nsi script, but this would require some rewriting in the script itself.
 wine "$WINEPREFIX/drive_c/Program Files (x86)/NSIS/makensis.exe" /DPRODUCT_VERSION=$VERSION electrum.nsi
 
-cd dist
-mv electrum-setup.exe $NAME_ROOT-$VERSION-setup.exe
-cd ..
+#cd dist
+#mv electrum-setup.exe $NAME_ROOT-$VERSION-setup.exe
+#cd ..
 
 echo "Done."
 sha256sum dist/electrum*exe

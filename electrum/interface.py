@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Electrum - lightweight Bitcoin client
+# Electrum - lightweight Fujicoin client
 # Copyright (C) 2011 thomasv@gitorious
 #
 # Permission is hereby granted, free of charge, to any person
@@ -25,6 +25,7 @@
 import os
 import re
 import ssl
+
 import sys
 import traceback
 import asyncio
