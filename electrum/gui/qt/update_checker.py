@@ -22,7 +22,7 @@ class UpdateCheck(QWidget, PrintError):
     download_url = "https://www.fujicoin.org/downloads.php"
 
     VERSION_ANNOUNCEMENT_SIGNING_KEYS = (
-        "FmQENhPPkbm5o2C82XPTunA9tgmouLBCmy",
+        "FhLQEZGsM3MS1dQN9otii6b3ZGTaxv2D6G",
     )
 
     def __init__(self, main_window, latest_version=None):
