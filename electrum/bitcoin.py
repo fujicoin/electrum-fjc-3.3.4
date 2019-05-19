@@ -152,7 +152,7 @@ def add_number_to_script(i: int) -> bytes:
 
 def relayfee(network: 'Network'=None) -> int:
     from .simple_config import FEERATE_DEFAULT_RELAY
-    MAX_RELAY_FEE = 1000000
+    MAX_RELAY_FEE = 1000000000
     f = network.relay_fee if network and network.relay_fee else FEERATE_DEFAULT_RELAY
     return min(f, MAX_RELAY_FEE)
 
